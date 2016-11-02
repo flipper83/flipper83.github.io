@@ -3,7 +3,7 @@
      
     // Countdown JS
     $('#example').countdown({
-        date: '2/3/2017 18:00:00',
+        date: '2/17/2017 18:00:00',
         offset: -8,
         day: 'Day',
         days: 'Days'

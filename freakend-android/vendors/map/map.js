@@ -3,8 +3,8 @@
         $(document).ready(function(){
             map = new GMaps({
                 el: '#map',
-                lat: 38.8244174,
-                lng:-76.982878,
+                lat: 40.7103665,
+                lng: -3.9963574,
                 zoomControl : false, 
                 zoomControlOpt: {
                 style : 'SMALL',
@@ -17,8 +17,8 @@
             overviewMapControl: false
         });
         map.addMarker({
-            lat: 38.8232806,
-            lng: -76.9663126,
+            lat: 40.7103665,
+            lng: -3.9963574,
             title: 'marlow heights', 
         });
     });
