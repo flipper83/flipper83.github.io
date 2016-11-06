@@ -1044,6 +1044,10 @@ h2, h3, h4, h5, h6 {
       padding-bottom: 55px; }
       .ticket .booking_ticket h2 span {
         color: #A9E66B; }
+    .ticket .booking_ticket h4 {
+      color: #fff; }
+      .ticket .booking_ticket h4 a {
+        color: #A9E66B; }
     .ticket .booking_ticket .register_form {
       background: #202e3b;
       padding: 35px 0;
