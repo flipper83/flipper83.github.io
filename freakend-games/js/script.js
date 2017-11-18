@@ -90,7 +90,7 @@
 
     // Count down setup
 
-    $('.countdown').countdown('2017/8/20', function(event) {
+    $('.countdown').countdown('2018/2/09', function(event) {
         $(this).html(event.strftime('%D days %H:%M:%S'));
     });
 
@@ -333,8 +333,8 @@ function initializeMap() {
             }
         ],
 
-        lat = 39.148352,
-        lng = -84.443999,
+        lat = 40.7109491,
+        lng = -3.9941444,
 
 
 
