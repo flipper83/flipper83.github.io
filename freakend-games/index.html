@@ -86,7 +86,7 @@
                   <div class="row">
                      <div class="col-sm-12 text-center">
                         <h3 class="mb-10">Desarrollo de videojuegos</h3>
-                        <h1 class="large mb-10">Freakend games 2017</h1>
+                        <h1 class="large mb-10">Freakend games 2018</h1>
                         <p class="uppercase ">9 al 11 de febrero de 2018 - Becerril de la Sierra, Madrid </p>
                         <a href="#register" class="but scroll "> Pre-Registro</a>
                      </div>
@@ -105,7 +105,7 @@
                <!--Row-->
                <div class="row">
                   <div class="col-sm-8 col-sm-offset-2 mb-100 text-center">
-                     <h1 class="title">Freakend Games 2017</h1>
+                     <h1 class="title">Freakend Games 2018</h1>
                      <p class="title-lead mt-20">Otro año más vuelve el evento de desarrollo y diseño de videojuegos más diferente del país. Durante un fin de semana, se hablá y se compartirán experiencias sobre desarrollo triple A, móvil, VR y todo aquello relativo con el mundo del desarrollo. </br><br> Este año traemos novedades, intaremos hacer un evento más social y colaborativo mezclando charlas en el formato tradicional con open space. </p>
                   </div>
                </div>
@@ -249,7 +249,7 @@
                   </div>
                   <div class="col-md-3 col-sm-3 text-right">
                      <div class="block-info-1">
-                        <a href="#tickets" class="scroll but"> Pre-Registro</a>
+                        <a href="#register" class="scroll but"> Pre-Registro</a>
                      </div>
                   </div>
                </div>
@@ -420,7 +420,7 @@
                                  <li>Entrada al evento</li>
                                  <li>Estancia en el Hotel</li>
                                  <li>Comida, bebida y cenas inc.</li>
-                                 <li><a href="#" class="but mt-30"> Pre-Registro</a></li>
+                                 <li><a href="#register" class="but mt-30"> Pre-Registro</a></li>
                               </ul>
                            </li>
                         </ul>
@@ -456,7 +456,7 @@
                <div class="row">
                   <div class="col-md-6 front-p">
                      <form class="registry-form form" method="post" action="#">
-                        <h2 class="sub-title-1 mb-30">Pre-Registro Freakend Games 2017</h2>
+                        <h2 class="sub-title-1 mb-30">Pre-Registro Freakend Games 2018</h2>
                         <div class="col-sm-6">
                            <input placeholder="Nombre" value="" id="name" name="name" type="text" required>
                         </div>
@@ -464,7 +464,16 @@
                            <input placeholder="Email" value="" id="email" name="email" type="text" required>
                         </div>
                         <div class="col-sm-12">
-                           <input value="Pre-Registro" class=" but submit" type="submit">
+                                    
+                           <input value="Pre-Registro" onclick="myFunction()" class=" but submit" type="submit">
+                           <script>
+                               function myFunction() {
+                                     
+                                     var name = document.getElementById("name").value
+                                     var email = document.getElementById("email").value
+                                     window.open("https://docs.google.com/forms/d/e/1FAIpQLScfY0o2-5fX55taI8Vc2-OioUYdDXMSs3Jwt4Eg6y-BExGlnA/viewform?&entry.56804086="+email+"&entry.253345964="+name);
+                               }
+                           </script>
                         </div>
                         <div class="col-sm-12">
                            <p>* No nos importan tus datos, no los compartiremos con nadie.</p>
