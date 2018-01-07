@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Freakend Mobile</title>
+     
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet"> 
+    <!-- Font Awesome  -->
+    <link href="css/font-awesome.min.css" rel="stylesheet"> 
+    <!-- Countdown -->
+    <link href="css/jquery.countdown.css" rel="stylesheet"> 
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    
+    <!--    Owl Carousel css -->
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="screen"> 
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="vendors/flexslider/flexslider.css"> 
+    <!-- style.css-->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body> 
+    <header class="row main_page">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-default menu_part">
+                <!-- mobile menu -->
+                    <div class="navbar-header">
+                       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><img src="images/header/logo.png" alt="#"></a>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="index.html">Home</a></li>
+                            <li><a href="#event">El evento</a></li>
+                            <li><a href="#agenda">Agenda</a></li>
+                            <li><a href="#speakers">Speakers</a></li>
+                            <li><a href="#code">Código de Conducta</a></li>
+                            <li><a href="#tickets">Tickets</a></li>
+                            <li><a href="#map">Contacta</a></li>
+
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+                <div class="row m0 count_down">
+                    <h6>17-19 Feb, 2017</h6>
+                    <h2><span>Freakend</span> Mobile 2017</h2>
+                    <h4>Un fin de semana para hablar de iOS y Android. </h4> 
+                    <ul id="example">
+                        <li><span class="days">00</span><p class="days_text">Días</p></li>
+                        <li class="seperator"></li>
+                        <li><span class="hours">00</span><p class="hours_text">Horas</p></li>
+                        <li class="seperator"></li>
+                        <li class="minit"><span class="minutes">00</span><p class="minutes_text">Minutos</p></li>
+                        <li class="seperator"></li>
+                        <li class="minit"><span class="seconds">00</span><p class="seconds_text">Segundos</p></li>
+                    </ul> 
+                </div>
+                <div class="row m0 event_info">
+                    <div class="col-md-4 event_info_describe">
+                        <div class="media item">
+                            <div class="media-left media-middle icon_side">
+                                <a href="#">
+                                    <i class="fa fa-map-marker"></i>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Hotel Las Gacelas</h3>
+                                <p>Paseo de San Sebastián 53 Berrecil de la Sierra. Madrid</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 event_info_describe">
+                        <div class="media item">
+                            <div class="media-left media-middle icon_side">
+                                <a href="#">
+                                    <i class="fa fa-microphone"></i>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Grandes speakers</h3>
+                                <p>Tendremos los mejores ponentes españoles del momento.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 event_info_describe">
+                        <div class="media item">
+                            <div class="media-left media-middle icon_side">
+                                <a href="#">
+                                    <i class="fa fa-ticket"></i>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">70 personas</h3>
+                                <p>Todos juntos. Un fin de semana. Comparte el espacio con otros developers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="row event">
+        <div id="event" class="container">
+            <div class="row event_inside">
+                <div class="col-md-8 event_left">
+                    <div class="row">
+
+                            <div class="media item">
+                                <div class="media-left media-middle icon_side">
+                                    <a href="#">
+                                        <i class="fa fa-paper-plane"></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">El evento más esperado del año</h4>
+                                </div>
+                            </div>
+                            <p> <br> Con más de 5 años a sus espaldas Freakend reune a lo mejor del panorama español del desarrollo en sus diferentes vertientes. En esta ocasión convoca a lo más destacado del mundo mobile y los junta un fin de semana bajo el mismo techo. <br> <br> La idea es socializar, hablar, debatir, comer, escuchar charlas y compartir de forma amena y distendida.  <br> <br> Lo que diferencia Freakend de otros eventos es la naturalidad de las conversaciones, la cercanía a los ponentes y la facilidad para el debate. Tenemos actividades después de las charlas como juegos de mesa o videojuegos y una pequeña fiesta donde poder hablar y reir tranquilamente.  </p>
+                        </div>
+
+                </div>
+                <div class="col-md-4 event_right">
+                    <img src="images/event/description_about.png" alt="#">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row events_schedule">
+        <div id="agenda" class="container">
+            <div class="row sec_header">
+                <h2>Agenda</h2>
+                <p>Próximamente.</p>
+            </div>
+            <div 
+            style="display: none"
+            class="row events_schedule_content">
+                <div class="events_schedule_tab">
+                    <ul class="nav schedules col-md-2 col-sm-3">
+                        <li class="active"><a data-toggle="tab" href="#home"><h3>Day 01 </h3><h6>08/03/2016</h6></a></li>
+                        <li><a data-toggle="tab" href="#menu1"><h3>Day 02 </h3><h6>09/03/2016</h6></a></li>
+                        <li><a data-toggle="tab" href="#menu2"><h3>Day 03 </h3><h6>10/03/2016</h6></a></li>
+                        <li><a data-toggle="tab" href="#menu3"><h3>Day 04 </h3><h6>11/03/2016</h6></a></li>
+                        <li><a data-toggle="tab" href="#menu4"><h3>Day 05 </h3><h6>12/03/2016</h6></a></li>
+                    </ul>
+                    <div class="tab-content col-md-10 col-sm-9">
+                        <div class="close_menu">
+                            <ul class="nav closemenu">
+                                <li class="active"><a data-toggle="tab" href="#home">09.00 AM - 11.30 AM</a></li>
+                                <li><a data-toggle="tab" href="#menu1"> 12.00 PM - 02.00 PM</a></li>
+                                <li><a data-toggle="tab" href="#menu2">02.30 PM - 05.00 PM</a></li>
+                                <li><a data-toggle="tab" href="#menu3">05.30 PM - 08.00 PM</a></li>
+                            </ul>
+                        </div>
+                        <div id="home" role="tabpanel" class="tab-pane fade in active">
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Basic to Advanced Web Design Tips &amp; Tricks</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Theme Development &amp; Design for ThemeForest</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menu1" role="tabe-panel" class="tab-pane fade">
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Theme Development &amp; Design for ThemeForest</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Basic to Advanced Web Design Tips &amp; Tricks</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menu2" role="tabe-panel" class="tab-pane fade">
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Basic to Advanced Web Design Tips &amp; Tricks</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Theme Development &amp; Design for ThemeForest</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menu3" role="tabe-panel" class="tab-pane fade">
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Theme Development &amp; Design for ThemeForest</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Basic to Advanced Web Design Tips &amp; Tricks</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="menu4" role="tabe-panel" class="tab-pane fade">
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Basic to Advanced Web Design Tips &amp; Tricks</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                            <div class="item_hover">
+                                <div class="image_hover">
+                                    <img src="http://placehold.it/145x145" alt="#">
+                                    <a href="#">Learn More</a>
+                                </div>
+                                <div class="hover_content">
+                                    <a href="schedule.html">Theme Development &amp; Design for ThemeForest</a>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incut  and  the labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation to it a ullo laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
+                                    <h3 class="pull-left"><i class="fa fa-user"></i>Touhida Moni (Founder, Lawem.com)</h3>
+                                    <h3><i class="fa fa-map-marker"></i>Hall # 2 (Windy Town)</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </section>
+
+
+    <section class="row speakers">
+        <div id="speakers" class="container">
+            <div class="row sec_header_left">
+                <h2>Speakers</h2>
+                <h4>Una de las bondades del freakend es que no hacemos distición entre ponentes y asistentes. Para dar charla en el freakend hay que asistir y tener una entrada, como el resto de los mortales. <br><br> Además este año hemos escuchado vuestras peticiones de años anteriores y vamos a tener un número más reducido de charlas, para que tengamos más tiempo para poder socializar. Además repetiremos el formato de sesiones de 'light talks' con charlas de 15 minutos. <br><br> Recordad el freakend lo haceis vosotros, si quereis participar <a href="https://goo.gl/forms/KtZOA7BUYvOLvhaI2">enviad</a> vuestras propuestas.
+                </h4>
+            </div>
+            <div 
+            style="display: none"
+            class="row slider_area">
+                <!-- Place somewhere in the <body> of your page -->
+                <div id="slider" class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/584x454" alt="#">
+                            <div class="speakers_right">
+                                <h4>Ashiful Haque Pappu</h4>
+                                <h6>Public Speaker &amp; Motivator</h6>
+                                <p>Vestibulum varius fermentum risus vitae lacinia neque auctor nec. Nunc ac a rutrum nulla. Nulla maximus dolor in quam euismod ac viverra libero.</p>
+                                <h5><i class="fa fa-list"></i> Will Speak in Following Events:</h5>
+                                <ul class="nav following_events">
+                                    <li><a href="schedule.html"><span>1</span>Specify the background color for the icon-boxed</a></li>
+                                    <li><a href="schedule.html"><span>2</span>Use each set with either 1-4 items per column</a></li>
+                                    <li><a href="schedule.html"><span>3</span>Use font awesome icons or your own image</a></li>
+                                    <li><a href="schedule.html"><span>4</span>Easily specify the icon color, circle color</a></li>
+                                </ul>
+                                <ul class="nav followers">
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    <!-- items mirrored twice, total of 12 -->
+                  </ul>
+                </div>
+                <div id="carousel" class="flexslider speaker_car">
+                    <ul class="slides">
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+                        <li>
+                          <img src="http://placehold.it/70x70" alt="#">
+                        </li>
+
+                        <!-- items mirrored twice, total of 12 -->
+                    </ul> 
+                    <div class="custom-navigation">
+                        <a href="#flex-next" class="flex-prev"><i class="fa fa-angle-left"></i></a>
+                        <a href="#flex-next" class="flex-next"><i class="fa fa-angle-right"></i></a>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row speakers">
+        <div id="code" class="container">
+            <div class="row sec_header_left">
+                <h2>Código de Conducta</h2>
+                <br><br>
+                <h4>Freakend es una conferencia hecha por la comunidad pensada para la divulgación y colaboración dentro de la comunidad de desarrolladores.
+                <br><br>
+                Valoramos la participación de cada miembro de la comunidad y queremos que todos los asistentes tengan una experiencia entretenida y satisfactoria. Para ello, se espera que todos los asistentes muestren respeto y cortesía hacia el resto durante la conferencia y todos los eventos relacionados con ella, estén oficialmente auspiciados por Freakend o no.
+                <br><br>
+                En concreto, todos los delegados, disertantes, y voluntarios que tomen parte en actividades relacionadas con Freakend deberán acatar el presente código de conducta. Los organizadores cuidarán del cumplimiento de este código durante el evento.
+                <br><br>
+                Se entiende por acoso todo comentario ofensivo alusivo al sexo, preferencias sexuales, discapacidades, aspecto físico, etnias y religiones; toda pornografía en espacios públicos; toda intimidación deliberada, acecho o persecución; todo acoso mediante fotografías o grabaciones; toda interrupción constante de charlas u otras actividades; todo contacto físico inapropiado y toda propuesta sexual no deseada.
+                <br><br>
+                Los participantes que sean apercibidos deberán desistir inmediatamente de su actitud.
+                <br><br>
+                Cuida tu lenguaje. Recuerda que las bromas sexistas, racistas y excluyentes en general podrían ofender a otras personas. El lenguaje excesivamente soez y las bromas ofensivas son inapropiadas en Freakend.
+                <br><br>
+                Si algún participante infringiera este código de conducta, la organización podrá tomar las medidas que considere adecuadas, como la amonestación o la expulsión sin derecho a reembolso.</h4>
+                <br><br>
+                <h3>Información de contacto<h3>
+                <br><br>
+                <h4>Si estás siendo objeto de acoso, notas que alguien está siendo acosado, o tienes cualquier otra preocupación, por favor ponte en contacto con un miembro del personal de la conferencia. Además puedes hablar con el personal del lugar y pedir que se te ponga en contacto con el responsable de la conferencia Jorge Juan Barroso.
+                <br><br>
+                Si se trata de una cuestión especialmente urgente, dirígete a cualquiera de estas personas:
+                <br><br>
+                Jorge Juan Barroso (+34 660209470)
+                <br><br>
+                El personal de la conferencia ayudará gustosamente a los participantes a que se pongan en contacto con el personal de seguridad del lugar o la policía local, y proporcionará escolta o socorrerá de cualquier otra forma a las víctimas de acoso para que puedan sentirse seguras durante el desarrollo de la conferencia. Tu bienestar es una de nuestras prioridades.
+                <br><br>
+                Gracias por hacer de este un evento abierto a la comunidad y amistoso.</h4>
+                <br><br>
+                <h3>Licencia</h3>
+                <br><br>
+                <h4>Este Código de Conducta se basa en los códigos de conducta de PyCon US 2013 (<a href="https://us.pycon.org/2013/about/code-of-conduct/">https://us.pycon.org/2013/about/code-of-conduct/</a>) y PyConAr 2012 (
+                <a href="http://ar.pycon.org/2012/conference/diversity/">http://ar.pycon.org/2012/conference/diversity/</a>), y está disponible bajo una licencia Creative Commons Atribución 3.0 España.<h4>
+                
+            </div>
+        </div>
+    </section/>
+
+    <section class="row comment">
+    <div class="container">
+        <div class="row comment_box">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <div class="total_items">
+                            <div class="col-sm-6 item_left">
+                                <div class="item_bg">
+                                    <p><span>“</span>Para qué te vas a ir a USA o otros paises de Europa a ver charlas de ingenieros cuando donde más vas a aprender es en el Freakend.</p>
+                                </div>
+                                <div class="media item_profile">
+                                    <div class="media-left media-middle icon_side">
+                                        <a href="#">
+                                            <img src="images/quotes/1.jpg" alt="#">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">David González</h4>
+                                        <h6>Android GDE</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 item item_right">
+                                <div class="item_bg">
+                                    <p><span>“</span>El evento mobile del año. <br><br><br></p>
+                                </div>
+                                <div class="media item_profile">
+                                    <div class="media-left media-middle icon_side">
+                                        <a href="#">
+                                            <img src="images/quotes/2.jpg" alt="#">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Cesar Valiente</h4>
+                                        <h6>Android GDE, Microsoft</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="row ticket">
+        <div id="tickets" class="container">
+            <div class="row booking_ticket">
+                <h2><span>Compra</span> tu Entrada a <span>120 euros</span> <br> <span>Registrate</span> y te avisamos cuando estén a la venta.</h2>
+                <div class="register_form">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <label for="InputName"><i class="fa fa-user"></i></label>
+                            <input type="text" class="form-control" id="InputName" placeholder="nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputEmail"><i class="fa fa-envelope"></i></label>
+                            <input type="email" class="form-control" id="InputEmail" placeholder="email">
+                        </div>
+                        <a onclick="myFunction()">Registrate</a>
+                        <script>
+                            function myFunction() {
+                                var name = document.getElementById("InputName").value
+                                var email = document.getElementById("InputEmail").value
+                                window.open("https://docs.google.com/forms/d/e/1FAIpQLSex_-biDDXfYOwpjQlL_rQ35ckWNsRO5Ithk0_zdaFymVfWKQ/viewform?entry.351082162="+name+"&entry.765849057="+email+"&entry.1279465819");
+                            }
+                        </script>
+                    </form>
+                </div>
+  <br><br>
+                <h2><span>Entradas becadas</span></h2>
+                <h4>Desde el freakend apostamos por la integración de todos los sectores y personas en el evento. Sabemos que no siempre lo conseguimos y más en un evento tan peculiar como es éste. Pero para ello vamos a poner en marcha una serie de iniciativas.<br><br>
+                La primera de ellas y gracias al apoyo del GDG España, vamos a abrir 5 entradas becadas para aquellas personas que no pueden optar a una entrada. Éstas entradas se intentarán dar a minorías dentro del sector y que no asisten a charlas. Si eres un estudiante sin recursos, una persona mayor en paro, mujer que no tiene oportunidad de asistir a estos eventos, puedes apuntarte <a href="https://goo.gl/forms/9wIeFQA8pcgf58sr1">aquí</a> y contarnos porque mereces la beca y que aportarás al evento. A principios de diciembre nos pondremos en contacto con los becados.
+            </h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="row sponsor">
+        <div class="container">
+            <div class="row sponsor_inner">
+                <h2>Nuestros <span>sponsors</span></h2>
+                <h4>¿Eres una empresa y quieres hacer mejor el freakend?. Contáctanos. </h4>
+                <div 
+                class="protfolio_content"> 
+                    <div 
+                    class="gallery_item flexslider">
+                        <ul class="slides">
+                            <li class="mix item bedroom indoor garage Kitchen bathroom" data-my-order="1"> 
+                                <img src="images/sponsors/01.jpg" alt="#"> 
+                            </li>
+                             <li class="mix item indoor basement Kitchen" data-my-order="2"> 
+                                <img src="images/sponsors/02.jpg" alt="#"> 
+                            </li> 
+                            <li class="mix item indoor basement Kitchen" data-my-order="3"> 
+                                <img src="images/sponsors/03.jpg" alt="#"> 
+                            </li>
+                            <li class="mix item indoor basement Kitchen" data-my-order="4"> 
+                                <img src="images/sponsors/04.jpg" alt="#"> 
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="row g_map">
+        <!-- Map -->
+        <div id="map"></div> 
+
+        <div class="container">
+            <div class="row contact_info">
+                <h3>Freakend Contact Info:</h3>
+                <div class="widget row m0">
+                    <ul>
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            <div class="location_address fleft">Hotel Las Gacelas, Paseo de San Sebastián 53<br>Berrecil de la Sierra. Madrid
+                            </div>
+                        </li>
+<!--                         <li>
+                            <i class="fa fa-phone"></i>
+                            <div class="fleft contact_no">
+                                <a href="#">+88 01719 45 75 93</a> 
+                            </div>
+                        </li> -->
+                        <li>
+                            <i class="fa fa-paper-plane"></i>
+                            <div class="fleft contact_mail">
+                                <a href="#">flipper83@gmail.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="nav followers">
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row footer_top">
+                <img src="images/header/logo_bottom.png" alt="#">
+            </div>
+            <div class="row footer_bottom">
+                <div class="left">
+                    Copyright &copy; 2016 <span>AsceticDeigners</span>  |  All Right Reserved
+                </div>
+                <!-- Menu -->
+                <div class="footer_menu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="#event">El Evento</a></li>
+                        <li><a href="#agenda">Agenda</a></li>
+                        <li><a href="#speakers">Speakers</a></li>
+                        <li><a href="#code">Código de Conducta</a></li>
+                        <li><a href="#map">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer> 
+   
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="vendors/flexslider/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script> 
+    
+    <!-- LightBox -->
+    <script src="vendors/Lightbox/lightbox.min.js"></script>
+    <!-- Mixitup JS -->
+    <script type="text/javascript" src="vendors/mixitup/jquery.mixitup.min.js"></script>  
+    
+    <!-- Map JS -->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="vendors/map/gmaps.min.js"></script>
+    <script src="vendors/map/map.js"></script>
+    <script src="js/custome.js"></script> 
+</body>
+</html>
