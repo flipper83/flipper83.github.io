@@ -6,14 +6,10 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<link rel="import" href="../polymer/polymer.html">
+--><link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-overlay-behavior/iron-overlay-behavior.html">
 
-<script>
-
-/**
+<script>/**
 Use `Polymer.PaperDialogBehavior` and `paper-dialog-shared-styles.html` to implement a Material Design
 dialog.
 
@@ -48,92 +44,79 @@ It will also ensure that focus remains in the dialog.
 @demo demo/index.html
 @polymerBehavior Polymer.PaperDialogBehavior
 */
-  Polymer.PaperDialogBehaviorImpl = {
+Polymer.PaperDialogBehaviorImpl = {
+  hostAttributes: {
+    'role': 'dialog',
+    'tabindex': '-1'
+  },
+  properties: {
+    /**
+     * If `modal` is true, this implies `no-cancel-on-outside-click`, `no-cancel-on-esc-key` and `with-backdrop`.
+     */
+    modal: {
+      type: Boolean,
+      value: false
+    }
+  },
+  observers: ['_modalChanged(modal, _readied)'],
+  listeners: {
+    'tap': '_onDialogClick'
+  },
+  ready: function () {
+    // Only now these properties can be read.
+    this.__prevNoCancelOnOutsideClick = this.noCancelOnOutsideClick;
+    this.__prevNoCancelOnEscKey = this.noCancelOnEscKey;
+    this.__prevWithBackdrop = this.withBackdrop;
+  },
+  _modalChanged: function (modal, readied) {
+    // modal implies noCancelOnOutsideClick, noCancelOnEscKey and withBackdrop.
+    // We need to wait for the element to be ready before we can read the
+    // properties values.
+    if (!readied) {
+      return;
+    }
 
-    hostAttributes: {
-      'role': 'dialog',
-      'tabindex': '-1'
-    },
-
-    properties: {
-
-      /**
-       * If `modal` is true, this implies `no-cancel-on-outside-click`, `no-cancel-on-esc-key` and `with-backdrop`.
-       */
-      modal: {
-        type: Boolean,
-        value: false
-      }
-
-    },
-
-    observers: [
-      '_modalChanged(modal, _readied)'
-    ],
-
-    listeners: {
-      'tap': '_onDialogClick'
-    },
-
-    ready: function () {
-      // Only now these properties can be read.
+    if (modal) {
       this.__prevNoCancelOnOutsideClick = this.noCancelOnOutsideClick;
       this.__prevNoCancelOnEscKey = this.noCancelOnEscKey;
       this.__prevWithBackdrop = this.withBackdrop;
-    },
+      this.noCancelOnOutsideClick = true;
+      this.noCancelOnEscKey = true;
+      this.withBackdrop = true;
+    } else {
+      // If the value was changed to false, let it false.
+      this.noCancelOnOutsideClick = this.noCancelOnOutsideClick && this.__prevNoCancelOnOutsideClick;
+      this.noCancelOnEscKey = this.noCancelOnEscKey && this.__prevNoCancelOnEscKey;
+      this.withBackdrop = this.withBackdrop && this.__prevWithBackdrop;
+    }
+  },
+  _updateClosingReasonConfirmed: function (confirmed) {
+    this.closingReason = this.closingReason || {};
+    this.closingReason.confirmed = confirmed;
+  },
 
-    _modalChanged: function(modal, readied) {
-      // modal implies noCancelOnOutsideClick, noCancelOnEscKey and withBackdrop.
-      // We need to wait for the element to be ready before we can read the
-      // properties values.
-      if (!readied) {
-        return;
-      }
+  /**
+   * Will dismiss the dialog if user clicked on an element with dialog-dismiss
+   * or dialog-confirm attribute.
+   */
+  _onDialogClick: function (event) {
+    // Search for the element with dialog-confirm or dialog-dismiss,
+    // from the root target until this (excluded).
+    var path = Polymer.dom(event).path;
 
-      if (modal) {
-        this.__prevNoCancelOnOutsideClick = this.noCancelOnOutsideClick;
-        this.__prevNoCancelOnEscKey = this.noCancelOnEscKey;
-        this.__prevWithBackdrop = this.withBackdrop;
-        this.noCancelOnOutsideClick = true;
-        this.noCancelOnEscKey = true;
-        this.withBackdrop = true;
-      } else {
-        // If the value was changed to false, let it false.
-        this.noCancelOnOutsideClick = this.noCancelOnOutsideClick &&
-          this.__prevNoCancelOnOutsideClick;
-        this.noCancelOnEscKey = this.noCancelOnEscKey &&
-          this.__prevNoCancelOnEscKey;
-        this.withBackdrop = this.withBackdrop && this.__prevWithBackdrop;
-      }
-    },
+    for (var i = 0; i < path.indexOf(this); i++) {
+      var target = path[i];
 
-    _updateClosingReasonConfirmed: function(confirmed) {
-      this.closingReason = this.closingReason || {};
-      this.closingReason.confirmed = confirmed;
-    },
+      if (target.hasAttribute && (target.hasAttribute('dialog-dismiss') || target.hasAttribute('dialog-confirm'))) {
+        this._updateClosingReasonConfirmed(target.hasAttribute('dialog-confirm'));
 
-    /**
-     * Will dismiss the dialog if user clicked on an element with dialog-dismiss
-     * or dialog-confirm attribute.
-     */
-    _onDialogClick: function(event) {
-      // Search for the element with dialog-confirm or dialog-dismiss,
-      // from the root target until this (excluded).
-      var path = Polymer.dom(event).path;
-      for (var i = 0; i < path.indexOf(this); i++) {
-        var target = path[i];
-        if (target.hasAttribute && (target.hasAttribute('dialog-dismiss') || target.hasAttribute('dialog-confirm'))) {
-          this._updateClosingReasonConfirmed(target.hasAttribute('dialog-confirm'));
-          this.close();
-          event.stopPropagation();
-          break;
-        }
+        this.close();
+        event.stopPropagation();
+        break;
       }
     }
+  }
+};
+/** @polymerBehavior */
 
-  };
-
-  /** @polymerBehavior */
-  Polymer.PaperDialogBehavior = [Polymer.IronOverlayBehavior, Polymer.PaperDialogBehaviorImpl];
-
-</script>
+Polymer.PaperDialogBehavior = [Polymer.IronOverlayBehavior, Polymer.PaperDialogBehaviorImpl];</script>

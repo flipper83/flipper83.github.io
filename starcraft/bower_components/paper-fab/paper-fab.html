@@ -6,9 +6,7 @@ The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
 The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-
-<link rel="import" href="../polymer/polymer.html">
+--><link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../paper-behaviors/paper-button-behavior.html">
@@ -56,7 +54,7 @@ Custom property | Description | Default
 -->
 
 <dom-module id="paper-fab">
-  <template strip-whitespace>
+  <template strip-whitespace="">
     <style include="paper-material-shared-styles">
       :host {
         @apply(--layout-vertical);
@@ -128,60 +126,52 @@ Custom property | Description | Default
     <span hidden$="{{_computeIsIconFab(icon, src)}}">{{label}}</span>
   </template>
 
-  <script>
-    Polymer({
-      is: 'paper-fab',
+  <script>Polymer({
+  is: 'paper-fab',
+  behaviors: [Polymer.PaperButtonBehavior],
+  properties: {
+    /**
+     * The URL of an image for the icon. If the src property is specified,
+     * the icon property should not be.
+     */
+    src: {
+      type: String,
+      value: ''
+    },
 
-      behaviors: [
-        Polymer.PaperButtonBehavior
-      ],
+    /**
+     * Specifies the icon name or index in the set of icons available in
+     * the icon's icon set. If the icon property is specified,
+     * the src property should not be.
+     */
+    icon: {
+      type: String,
+      value: ''
+    },
 
-      properties: {
-        /**
-         * The URL of an image for the icon. If the src property is specified,
-         * the icon property should not be.
-         */
-        src: {
-          type: String,
-          value: ''
-        },
+    /**
+     * Set this to true to style this is a "mini" FAB.
+     */
+    mini: {
+      type: Boolean,
+      value: false,
+      reflectToAttribute: true
+    },
 
-        /**
-         * Specifies the icon name or index in the set of icons available in
-         * the icon's icon set. If the icon property is specified,
-         * the src property should not be.
-         */
-        icon: {
-          type: String,
-          value: ''
-        },
-
-        /**
-         * Set this to true to style this is a "mini" FAB.
-         */
-        mini: {
-          type: Boolean,
-          value: false,
-          reflectToAttribute: true
-        },
-
-        /**
-         * The label displayed in the badge. The label is centered, and ideally
-         * should have very few characters.
-         */
-        label: {
-          type: String,
-          observer: '_labelChanged'
-        }
-      },
-
-      _labelChanged: function() {
-        this.setAttribute('aria-label', this.label);
-      },
-
-      _computeIsIconFab: function(icon, src) {
-        return (icon.length > 0) || (src.length > 0);
-      }
-    });
-  </script>
+    /**
+     * The label displayed in the badge. The label is centered, and ideally
+     * should have very few characters.
+     */
+    label: {
+      type: String,
+      observer: '_labelChanged'
+    }
+  },
+  _labelChanged: function () {
+    this.setAttribute('aria-label', this.label);
+  },
+  _computeIsIconFab: function (icon, src) {
+    return icon.length > 0 || src.length > 0;
+  }
+});</script>
 </dom-module>

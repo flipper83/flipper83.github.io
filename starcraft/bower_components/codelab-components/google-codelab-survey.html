@@ -12,9 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations under
 the License.
--->
-
-<link rel="import" href="../polymer/polymer.html">
+--><link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-localstorage/iron-localstorage.html">
 <link rel="import" href="../paper-radio-button/paper-radio-button.html">
 <link rel="import" href="../paper-radio-group/paper-radio-group.html">
@@ -47,7 +45,7 @@ Custom property                     | Description
 @demo demo/survey.html
 -->
 <dom-module id="google-codelab-survey">
-  <template strip-whitespace>
+  <template strip-whitespace="">
     <style include="shared-style">
       :host {
         display: block;
@@ -75,115 +73,113 @@ Custom property                     | Description
         padding: 4px 0;
       }
     </style>
-    <iron-localstorage name="{{_storageKey(surveyId)}}" value="{{answers}}"
-        on-iron-localstorage-load-empty="_initAnswers"
-        on-iron-localstorage-load="_storageLoaded">
+    <iron-localstorage name="{{_storageKey(surveyId)}}" value="{{answers}}" on-iron-localstorage-load-empty="_initAnswers" on-iron-localstorage-load="_storageLoaded">
     </iron-localstorage>
     <div class="survey"><content></content></div>
   </template>
-  <script>
-    Polymer({
-      is: 'google-codelab-survey',
+  <script>Polymer({
+  is: 'google-codelab-survey',
 
-      /**
-       * Fired when user answers a survey question.
-       * @event google-codelab-survey-answer
-       * detail {{question: String, answer: String}}
-       */
+  /**
+   * Fired when user answers a survey question.
+   * @event google-codelab-survey-answer
+   * detail {{question: String, answer: String}}
+   */
+  properties: {
+    /**
+     * An identifier to differentiate multiple surveys.
+     * It is important to set this to a non-empty string
+     * when hosting 2+ codelabs/surveys on the same domain.
+     */
+    surveyId: {
+      type: String,
+      value: ''
+    },
 
-      properties: {
-        /**
-         * An identifier to differentiate multiple surveys.
-         * It is important to set this to a non-empty string
-         * when hosting 2+ codelabs/surveys on the same domain.
-         */
-        surveyId: {
-          type: String,
-          value: ''
-        },
+    /**
+     * All answers, synced with `localStorage`.
+     * Keys are questions text.
+     */
+    answers: {
+      type: Object,
+      notify: true
+    }
+  },
+  listeners: {
+    'click': '_onClick'
+  },
+  ready: function () {
+    var elems = Polymer.dom(this).queryDistributedElements('paper-radio-group');
 
-        /**
-         * All answers, synced with `localStorage`.
-         * Keys are questions text.
-         */
-        answers: {
-          type: Object,
-          notify: true
-        }
-      },
+    for (var i = 0, elem; elem = elems[i]; i++) {
+      // use this method for its side effect: ensure `name` property is present
+      // on radio buttons
+      this._selectAnswer(elem);
+    }
+  },
+  _initAnswers: function () {
+    this.answers = {};
+  },
+  _storageKey: function (id) {
+    return 'codelab-survey-' + id;
+  },
+  _storageLoaded: function () {
+    var elems = this.getContentChildren();
+    var answer = '';
 
-      listeners: {
-        'click': '_onClick'
-      },
-
-      ready: function() {
-        var elems = Polymer.dom(this).queryDistributedElements('paper-radio-group');
-        for (var i = 0, elem; elem = elems[i]; i++) {
-          // use this method for its side effect: ensure `name` property is present
-          // on radio buttons
-          this._selectAnswer(elem);
-        }
-      },
-
-      _initAnswers: function() {
-        this.answers = {};
-      },
-
-      _storageKey: function(id) {
-        return 'codelab-survey-' + id;
-      },
-
-      _storageLoaded: function() {
-        var elems = this.getContentChildren();
-        var answer = '';
-        for (var i = 0, elem; elem = elems[i]; i++) {
-          if (elem.tagName === 'H4') {
-            answer = this.answers[this._elemText(elem)];
-            continue;
-          }
-          if (!answer || !elem.select) {
-            continue;
-          }
-          this._selectAnswer(elem, answer);
-        }
-      },
-
-      /**
-       * @param {?} groupEl .
-       * @param {?=} value .
-       */
-      _selectAnswer: function(groupEl, value) {
-        for (var i = 0, elem; elem = groupEl.children[i]; i++) {
-          if (!elem.name) {
-            elem.name = this._elemText(elem);
-          }
-          if (elem.name === value) {
-            groupEl.select(value);
-          }
-        }
-      },
-
-      _onClick: function(evt) {
-        evt = Polymer.dom(evt);
-        if (evt.localTarget.tagName !== 'PAPER-RADIO-BUTTON') {
-          return;
-        }
-        var qElem = evt.localTarget.parentElement.previousElementSibling;
-        if (!qElem || qElem.tagName !== 'H4') {
-          return;
-        }
-        var question = this._elemText(qElem);
-        var answer = evt.localTarget.name;
-        this.set('answers.' + question, answer);
-        this.fire('google-codelab-survey-answer', {
-          'question': question,
-          'answer': answer
-        });
-      },
-
-      _elemText: function(el) {
-        return el.textContent.trim().replace(/\n|\r/g, '');
+    for (var i = 0, elem; elem = elems[i]; i++) {
+      if (elem.tagName === 'H4') {
+        answer = this.answers[this._elemText(elem)];
+        continue;
       }
+
+      if (!answer || !elem.select) {
+        continue;
+      }
+
+      this._selectAnswer(elem, answer);
+    }
+  },
+
+  /**
+   * @param {?} groupEl .
+   * @param {?=} value .
+   */
+  _selectAnswer: function (groupEl, value) {
+    for (var i = 0, elem; elem = groupEl.children[i]; i++) {
+      if (!elem.name) {
+        elem.name = this._elemText(elem);
+      }
+
+      if (elem.name === value) {
+        groupEl.select(value);
+      }
+    }
+  },
+  _onClick: function (evt) {
+    evt = Polymer.dom(evt);
+
+    if (evt.localTarget.tagName !== 'PAPER-RADIO-BUTTON') {
+      return;
+    }
+
+    var qElem = evt.localTarget.parentElement.previousElementSibling;
+
+    if (!qElem || qElem.tagName !== 'H4') {
+      return;
+    }
+
+    var question = this._elemText(qElem);
+
+    var answer = evt.localTarget.name;
+    this.set('answers.' + question, answer);
+    this.fire('google-codelab-survey-answer', {
+      'question': question,
+      'answer': answer
     });
-  </script>
+  },
+  _elemText: function (el) {
+    return el.textContent.trim().replace(/\n|\r/g, '');
+  }
+});</script>
 </dom-module>

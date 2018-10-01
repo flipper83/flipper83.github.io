@@ -12,9 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations under
 the License.
--->
-
-<link rel="import" href="../polymer/polymer.html">
+--><link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="shared-style.html">
 <link rel="import" href="step-style.html">
 
@@ -51,7 +49,7 @@ Custom property                         | Description
 @demo demo/step.html
 -->
 <dom-module id="google-codelab-step">
-  <template strip-whitespace>
+  <template strip-whitespace="">
     <style include="shared-style"></style>
     <style include="step-style"></style>
     <style include="syntax-style"></style>
@@ -63,95 +61,83 @@ Custom property                         | Description
       </div>
     </div>
   </template>
-  <script>
-  (function() {
+  <script>(function () {
+  function encodeHTMLEntities_(htmlStr) {
+    return htmlStr.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
 
-    function encodeHTMLEntities_(htmlStr) {
-      return htmlStr.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-    }
+  Polymer({
+    is: 'google-codelab-step',
 
-    Polymer({
-      is: 'google-codelab-step',
-
+    /**
+     * Fired when user copies a snippet into the clipboard.
+     * Not all browsers are supported. See http://caniuse.com/#feat=clipboard.
+     * @event google-codelab-snippet-copy
+     * @detail {{snippet: String}}
+     */
+    properties: {
       /**
-       * Fired when user copies a snippet into the clipboard.
-       * Not all browsers are supported. See http://caniuse.com/#feat=clipboard.
-       * @event google-codelab-snippet-copy
-       * @detail {{snippet: String}}
+       * Step number, starting from 1.
+       * Normally set by the parent `<google-codelab>` element.
        */
-
-      properties: {
-        /**
-         * Step number, starting from 1.
-         * Normally set by the parent `<google-codelab>` element.
-         */
-        step: {
-          type: Number,
-          value: 1,
-          notify: true
-        },
-
-        /**
-         * Title of this step.
-         */
-        label: {
-          type: String,
-          value: ''
-        },
-
-        /**
-         * How long, on average, it takes to complete the step.
-         */
-        duration: {
-          type: Number,
-          value: 0,
-          notify: true
-        },
-
-        /**
-         * Indicates whether this step is currently showing.
-         * Normally set by the parent `<google-codelab>` element.
-         */
-        active: {
-          type: Boolean,
-          value: false,
-          observer: '_activeChanged'
-        }
+      step: {
+        type: Number,
+        value: 1,
+        notify: true
       },
 
-      _isHighlighted: false,
+      /**
+       * Title of this step.
+       */
+      label: {
+        type: String,
+        value: ''
+      },
 
-      _activeChanged: function() {
-        var codelab = Polymer.dom(this).parentNode;
+      /**
+       * How long, on average, it takes to complete the step.
+       */
+      duration: {
+        type: Number,
+        value: 0,
+        notify: true
+      },
 
-        // Don't syntax highlight code if google-codelab requests it.
-        if (codelab.localName === 'google-codelab' && codelab.noHighlight) {
-          return;
-        }
-
-        if (this.active && !this._isHighlighted) {
-
-          // Minimize jank by waiting one click to do syntax highlighting.
-          this.async(function() {
-            var blocks = Polymer.dom(this).querySelectorAll('pre > code');
-            blocks.forEach(function(block) {
-              // TODO: consider pre-escaping markup on server.
-              Polymer.dom(block).innerHTML = prettyPrintOne(
-                  encodeHTMLEntities_(block.textContent));
-
-              block.addEventListener('copy', function() {
-                this.fire('google-codelab-snippet-copy', {
-                  snippet: block.textContent
-                });
-              }.bind(this));
-            }.bind(this));
-
-            this._isHighlighted = true;
-          });
-        }
+      /**
+       * Indicates whether this step is currently showing.
+       * Normally set by the parent `<google-codelab>` element.
+       */
+      active: {
+        type: Boolean,
+        value: false,
+        observer: '_activeChanged'
       }
-    });
+    },
+    _isHighlighted: false,
+    _activeChanged: function () {
+      var codelab = Polymer.dom(this).parentNode; // Don't syntax highlight code if google-codelab requests it.
 
-  })();
-  </script>
+      if (codelab.localName === 'google-codelab' && codelab.noHighlight) {
+        return;
+      }
+
+      if (this.active && !this._isHighlighted) {
+        // Minimize jank by waiting one click to do syntax highlighting.
+        this.async(function () {
+          var blocks = Polymer.dom(this).querySelectorAll('pre > code');
+          blocks.forEach(function (block) {
+            // TODO: consider pre-escaping markup on server.
+            Polymer.dom(block).innerHTML = prettyPrintOne(encodeHTMLEntities_(block.textContent));
+            block.addEventListener('copy', function () {
+              this.fire('google-codelab-snippet-copy', {
+                snippet: block.textContent
+              });
+            }.bind(this));
+          }.bind(this));
+          this._isHighlighted = true;
+        });
+      }
+    }
+  });
+})();</script>
 </dom-module>
