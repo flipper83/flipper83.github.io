@@ -90,7 +90,7 @@
 
     // Count down setup
 
-    $('.countdown').countdown('2019/2/22', function(event) {
+    $('.countdown').countdown('2018/2/23', function(event) {
         $(this).html(event.strftime('%D days %H:%M:%S'));
     });
 
