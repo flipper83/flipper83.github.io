@@ -1,6 +1,6 @@
 {
-"companyName": "DefaultCompany",
-"productName": "unicorn-companion",
+"companyName": "Bonillaware",
+"productName": "unicornio!",
 "productVersion": "1.0",
 "dataUrl": "web-build.data.unityweb",
 "asmCodeUrl": "web-build.asm.code.unityweb",
@@ -10,7 +10,7 @@
 "graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
 "splashScreenStyle": "Dark",
-"backgroundColor": "#231F20",
+"backgroundColor": "#806D22",
 "cacheControl": {"default": "must-revalidate"},
 "developmentBuild": false,
 "multithreading": false,
