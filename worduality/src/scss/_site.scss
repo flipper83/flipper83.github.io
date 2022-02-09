@@ -1,0 +1,151 @@
+/*********** ELEMENTS ***********/
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.game {
+  width: 100%;
+  max-width: 30rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 0.4rem;
+  padding: 2rem;
+}
+
+.cell {
+  border: 2px solid var(--cell-border);
+  min-width: 4rem;
+  min-height: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+
+  &.correct-both {
+    background-color: var(--cell-background-correct-both);
+    color: var(--white);
+  }
+
+  &.near {
+    background-color: var(--cell-background-near);
+    color: var(--white);
+  }
+
+  &.correct-one {
+    background-color: var(--cell-background-correct-one);
+    color: var(--white);
+  }
+  
+  &.correct-two {
+    background-color: var(--cell-background-correct-two);
+    color: var(--white);
+  }
+  
+  &.correct {
+    background-color: var(--cell-background-correct);
+    color: var(--white);
+  }
+
+  &.wrong {
+    background-color: var(--cell-background-wrong);
+    color: var(--white);
+  }
+}
+
+
+.keyboard-container {
+  height: 15rem;
+
+  .keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+
+    .key {
+      font-family: inherit;
+      font-weight: bold;
+      border: 0;
+      padding: 0;
+      height: 3rem;
+      cursor: pointer;
+      background-color: var(--keyboard-normal-bg);
+      color: var(--text-normal-color);
+      flex-grow: 1;
+      text-transform: uppercase;
+      margin-right: 6px;
+      border-radius: 4px;
+      user-select: none;
+
+      &.correct-one {
+        background-color: var(--cell-background-correct-one);
+        color: var(--white);
+      }
+
+      &.correct-two {
+        background-color: var(--cell-background-correct-two);
+        color: var(--white);
+      }
+
+      &.correct-both {
+        background-color: var(--cell-background-correct-both);
+        color: var(--white);
+      }
+
+      &.correct {
+        background-color: var(--cell-background-correct);
+        color: var(--white);
+      }
+
+      &.near {
+        background-color: var(--cell-background-near);
+        color: var(--white);
+      }
+
+      &.wrong {
+        background-color: var(--cell-background-wrong);
+        color: var(--white);
+      }
+    }
+
+    button.wide-button {
+      flex-grow: 1.5;
+    }
+
+    button.del-button {
+      font-size: 130%;
+    }
+  }
+
+  .spacer-half {
+    flex-grow: 0.5;
+  }
+}

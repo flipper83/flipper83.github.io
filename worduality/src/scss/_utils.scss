@@ -1,0 +1,28 @@
+:root {
+  /* COLORS */
+  //App colors
+  --black: rgb(0, 0, 0);
+  --white: rgb(255, 255, 255);
+  --light-gray: rgb(214, 226, 231);
+  --dark-gray: rgb(196, 199, 201);
+  --dark-dark-gray: rgb(94, 96, 97);
+  --yellow: rgb(207, 230, 82);
+  --green: rgb(128, 207, 128);
+  --blue: rgb(32, 45, 163);
+  --purple: rgba(128, 8, 133, 0.671);
+  
+  //keyboard
+  --keyboard-normal-bg: var(--light-gray);
+  
+  //cells
+  --cell-border: var(--dark-gray);
+  --cell-background: var(--white);
+  --cell-background-correct-one: var(--green);
+  --cell-background-correct-two: var(--blue);
+  --cell-background-correct-both: var(--purple);
+  --cell-background-near: var(--yellow);
+  --cell-background-wrong: var(--dark-dark-gray);
+
+  //Text
+  --text-normal-color: var(--black);
+}
