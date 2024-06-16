@@ -32,18 +32,18 @@
             <div class="buttons_panel">
                 <div class="buttons">
                     <div class="buttons_team">
-                        <button class="button small blue">
+                        <button onclick= "score('local','-1')" class="button small blue">
                             <img class="button_icon minus" src="./res/minus.svg" />
                         </button>
-                        <button class="button big blue right">
+                        <button onclick= "score('local','+1')" class="button big blue right">
                             <img class="button_icon plus" src="./res/plus.svg" />
                         </button>
                     </div>
                     <div class="buttons_team">
-                        <button class="button big red">
+                        <button onclick= "score('away','+1')" class="button big red">
                             <img class="button_icon plus" src="./res/plus.svg" />
                         </button>
-                        <button class="button small red right">
+                        <button onclick= "score('away','-1')" class="button small red right">
                             <img class="button_icon minus" src="./res/minus.svg" />
                         </button>
                     </div>
