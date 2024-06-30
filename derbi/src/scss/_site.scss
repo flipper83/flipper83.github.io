@@ -14,8 +14,9 @@ html {
   height: 100%;
   align-items: center;
   flex-direction: column;
-  // min-height: 20em;
+  // min-height: 40em;
   background-image: url("../../res/bg.svg");
+  // background-size: 100% 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -53,6 +54,8 @@ html {
   flex-direction: column;
   background-image: url("../../res/bg_scores.svg");
   background-position: bottom;
+  background-repeat: no-repeat;
+  margin-top: 10%;
   // background-color: aqua;
 
   .content{
@@ -82,6 +85,7 @@ html {
 .buttons_panel{
   width: 100%;
   display: flex;
+  margin-bottom: 10%;
   // background-color: yellow;
 }
 
@@ -106,13 +110,13 @@ html {
 }
 
 .big {
-  width: 17vw;
-  height:17vw;
+  width: 18vw;
+  height:18vw;
 }
 
 .small {
-  width: 10vw;
-  height:10vw;
+  width: 11vw;
+  height:11vw;
 }
 
 .button_icon {
@@ -150,4 +154,27 @@ html {
 .team{
   width: 100%;
   // background-color: red;
+}
+
+@media screen and (min-width: 320px) 
+  and (max-width: 767px) 
+  and (orientation: portrait) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  .content{
+    width: 100%;
+    display: grid;
+    grid-column: 3;
+    grid-template-columns: 1fr 1.8fr 1fr;
+    margin-bottom: 3%;
+  }
+
 }
