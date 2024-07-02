@@ -23,6 +23,23 @@ html {
   // background-color: blue;
 }
 
+.settings {
+  position: absolute;
+  display: flex;
+  top: 1em;
+  right: 1em;
+}
+
+.bt_fullscreen {
+  width: 3em;
+  height:3em;
+  fill:black;
+}
+
+.bt_fullscreen:hover{
+  fill: gray;
+}
+
 .title {
   font-size: 2.5rem;
   text-align: center;
@@ -159,22 +176,6 @@ html {
 @media screen and (min-width: 320px) 
   and (max-width: 767px) 
   and (orientation: portrait) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
-
-  .content{
-    width: 100%;
-    display: grid;
-    grid-column: 3;
-    grid-template-columns: 1fr 1.8fr 1fr;
-    margin-bottom: 3%;
-  }
+  
 
 }

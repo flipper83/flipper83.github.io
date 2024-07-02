@@ -1,21 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const WORD_SIZE = 5;
-  const ATTEMPT_SIZE = 6;
-  const FAKE_WORD = "perro";
-  const FAKE_WORD2 = "patos";
 
-  const cells = getCells();
-
-
-  function getCells() {
-    const cells = document.querySelectorAll(".cell");
-    return cells;
-  }
-
-  function setTextToCell(attempt, letterPos, text) {
-    const cellPos = attempt * WORD_SIZE + letterPos;
-    cells[cellPos].textContent = text;
-  }
 });
 
 function score(team,value) {
@@ -26,5 +10,34 @@ function score(team,value) {
     score = 0;
   }
   element.textContent = score;
-  
+}
+
+var elem = document.documentElement;
+function fullscreen() {
+  if (document.fullscreenElement != null) {
+    closeFullscreen();
+    return;
+  }
+
+  openFullscreen();
+}
+
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
 }
