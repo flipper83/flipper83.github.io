@@ -41,3 +41,25 @@ function closeFullscreen() {
     document.msExitFullscreen();
   }
 }
+
+function mute() {
+  var bgMusic = document.getElementById('bg_music');
+  bgMusic.muted = true;
+
+  var soundOn = document.getElementById('sound_on');
+  var soundOff = document.getElementById('sound_off');
+
+  soundOn.style.display = 'none'
+  soundOff.style.display = 'block'
+}
+
+function play() {
+  var bgMusic = document.getElementById('bg_music');
+  bgMusic.muted = false;
+  
+  var soundOn = document.getElementById('sound_on');
+  var soundOff = document.getElementById('sound_off');
+
+  soundOn.style.display = 'block'
+  soundOff.style.display = 'none'
+}

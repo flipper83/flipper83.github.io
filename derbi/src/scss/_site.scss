@@ -30,13 +30,26 @@ html {
   right: 1em;
 }
 
+.bt_sound_off {
+  width: 3em;
+  height:3em;
+  display: none;
+  fill:black;
+}
+
+.bt_sound {
+  width: 3em;
+  height:3em;
+  fill:black;
+}
+
 .bt_fullscreen {
   width: 3em;
   height:3em;
   fill:black;
 }
 
-.bt_fullscreen:hover{
+svg:hover{
   fill: gray;
 }
 
