@@ -56,6 +56,7 @@ function mute() {
 function play() {
   var bgMusic = document.getElementById('bg_music');
   bgMusic.muted = false;
+  bgMusic.play();
   
   var soundOn = document.getElementById('sound_on');
   var soundOff = document.getElementById('sound_off');
@@ -63,3 +64,10 @@ function play() {
   soundOn.style.display = 'block'
   soundOff.style.display = 'none'
 }
+
+// function onLoadAudio() {
+//   console.log("audio load");
+//   var bgMusic = document.getElementById('bg_music');
+//   bgMusic.muted = false;
+//   bgMusic.play();
+// }
