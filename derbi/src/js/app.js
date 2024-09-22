@@ -10,6 +10,13 @@ function score(team,value) {
     score = 0;
   }
   element.textContent = score;
+  
+  if (value > 0) {
+    var bgEffect = document.getElementById('bg_effect_gol');
+    bgEffect.muted = false;
+    bgEffect.loop = false;
+    bgEffect.play();
+  }
 }
 
 var elem = document.documentElement;
@@ -65,9 +72,3 @@ function play() {
   soundOff.style.display = 'none'
 }
 
-// function onLoadAudio() {
-//   console.log("audio load");
-//   var bgMusic = document.getElementById('bg_music');
-//   bgMusic.muted = false;
-//   bgMusic.play();
-// }
